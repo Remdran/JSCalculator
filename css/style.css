@@ -8,8 +8,8 @@
     height: 320px;
     width: 255px;
     margin: 50px auto;
-    background-color: grey;
-    border-radius: 5%;
+    background-color: #585858;
+    border-radius: 8%;
     padding: 20px;
 }
 
@@ -17,12 +17,26 @@
     margin: 20px 5px;
     height: 40px;
     width: 205px;
-    background-color: white;
+    text-align: right;
+    background-color: #CDDECE;
     border-radius: 8%;
+    font-size: 34px;
+    font-family: 'Unica One', cursive;
+    overflow: hidden;
 }
 
 button {
     width: 40px;
     height: 30px;
     margin: 5px;   
+    background-color: #EAEAEA;
+    border-radius: 8%;
+}
+
+.clear {
+     background-color: #B86F83;
+}
+
+.power {
+    background-color: #789DA0;
 }
