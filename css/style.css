@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Unica One', cursive;
 }
 
 #base {
@@ -9,8 +10,9 @@
     width: 255px;
     margin: 50px auto;
     background-color: #585858;
-    border-radius: 8%;
+    border-radius: 20px;
     padding: 20px;
+    box-shadow: inset -14px -14px 40px -17px #121212, inset 14px 4px 40px -17px, 8px 8px 9px -4px #212121;
 }
 
 #outputbox {
@@ -19,10 +21,11 @@
     width: 205px;
     text-align: right;
     background-color: #CDDECE;
-    border-radius: 8%;
-    font-size: 34px;
-    font-family: 'Unica One', cursive;
+    border-radius: 5px;
+    font-size: 34px;    
     overflow: hidden;
+    border: 2px solid #8b9b8c;
+    box-shadow: inset -5px -5px 7px -6px #777777; 
 }
 
 button {
@@ -30,13 +33,33 @@ button {
     height: 30px;
     margin: 5px;   
     background-color: #EAEAEA;
-    border-radius: 8%;
+    border-radius: 5px;
+    font-size: 80%;
+    box-shadow: 0px 7px 6px -6px #333333, inset 0px -4px 11px -7px #777777;
+    border-width: 0px;
+    border-color:none;
+    transition: all .01s linear;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+button:focus {
+    outline: 0;
 }
 
 .clear {
-     background-color: #B86F83;
+     background-color: #b52f47;
 }
 
 .power {
     background-color: #789DA0;
+}
+
+#info {
+    margin-top: 5px;
+    text-align: right;
+    font-size: 30%;
+    color: #EAEAEA;
 }

@@ -160,7 +160,7 @@ buttonDecimal.addEventListener('click', function () {
 // OPERATORS
 //=======================================================================
 var buttonPlus = document.getElementById('plus');
-buttonPlus.addEventListener('click', function () {
+buttonPlus.addEventListener('click', function () {  //IF IN STATE 2 DO THE CALCULATION AND PRINT TO TO SCREEN
     oper = buttonPlus.id;
     state = 2;
     console.log("Operator = " + oper);
