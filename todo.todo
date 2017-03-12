@@ -1,0 +1,5 @@
+✔ Implement on/off @done (12/03/2017, 14:26:09)
+✔ Implement AC/C buttons @done (12/03/2017, 14:12:23)
+☐ Work on basic calc functionality
+    ☐ When you have input 12 + 12, instead of pressing =, pressing + again will show the answer and put the answer in value1 ready for the next operation    
+☐ Refactor code to best standard + ES6

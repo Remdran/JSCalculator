@@ -20,7 +20,6 @@
     height: 40px;
     width: 205px;
     text-align: right;
-    background-color: #CDDECE;
     border-radius: 5px;
     font-size: 34px;    
     overflow: hidden;
@@ -62,4 +61,12 @@ button:focus {
     text-align: right;
     font-size: 30%;
     color: #EAEAEA;
+}
+
+.off {
+    background-color: #939e93 !important;
+}
+
+.on {
+    background-color: #CDDECE;
 }
