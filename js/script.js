@@ -1,14 +1,14 @@
-var buttonArray = document.querySelectorAll("button"); //Turn into an array, not a nodelist
-console.log(buttonArray);
-
 var state = 1;
 var input1 = '';
 var input2 = '';
 var oper;
 var calcOn = true;
 var output = 0;
+var stringIn = ''
+var stringArr = [];
 
 var outputbox = document.getElementById('outputbox');
+var inputString = document.getElementById('stringinput');
 
 
 //=========================================================
@@ -19,12 +19,12 @@ button0.addEventListener('click', function () {
     if (calcOn) {
         if (state === 1) {
             input1 += button0.id;
-            console.log("Input 1 = " + input1);
             outputbox.innerHTML = input1;
+            stringIn += button0.id;       
         } else if (state === 2) {
             input2 += button0.id;
-            console.log("Input 2 = " + input2);
             outputbox.innerHTML = input2;
+            stringIn += button0.id;    
         }
     }
 });
@@ -34,12 +34,12 @@ button1.addEventListener('click', function () {
     if (calcOn) {
         if (state === 1) {
             input1 += button1.id;
-            console.log("Input 1 = " + input1);
             outputbox.innerHTML = input1;
+            stringIn += button1.id;    
         } else if (state === 2) {
             input2 += button1.id;
-            console.log("Input 2 = " + input2);
             outputbox.innerHTML = input2;
+            stringIn += button1.id;    
         }
     }
 });
@@ -49,12 +49,12 @@ button2.addEventListener('click', function () {
     if (calcOn) {
         if (state === 1) {
             input1 += button2.id;
-            console.log("Input 1 = " + input1);
             outputbox.innerHTML = input1;
+            stringIn += button2.id;    
         } else if (state === 2) {
             input2 += button2.id;
-            console.log("Input 2 = " + input2);
             outputbox.innerHTML = input2;
+            stringIn += button2.id;    
         }
     }
 });
@@ -66,10 +66,12 @@ button3.addEventListener('click', function () {
             input1 += button3.id;
             console.log("Input 1 = " + input1);
             outputbox.innerHTML = input1;
+            stringIn += button3.id;    
         } else if (state === 2) {
             input2 += button3.id;
             console.log("Input 2 = " + input2);
             outputbox.innerHTML = input2;
+            stringIn += button3.id;    
         }
     }
 });
@@ -81,10 +83,12 @@ button4.addEventListener('click', function () {
             input1 += button4.id;
             console.log("Input 1 = " + input1);
             outputbox.innerHTML = input1;
+            stringIn += button4.id;    
         } else if (state === 2) {
             input2 += button4.id;
             console.log("Input 2 = " + input2);
             outputbox.innerHTML = input2;
+            stringIn += button4.id;    
         }
     }
 });
@@ -97,10 +101,12 @@ button5.addEventListener('click', function () {
             input1 += button5.id;
             console.log("Input 1 = " + input1);
             outputbox.innerHTML = input1;
+            stringIn += button5.id;    
         } else if (state === 2) {
             input2 += button5.id;
             console.log("Input 2 = " + input2);
             outputbox.innerHTML = input2;
+            stringIn += button5.id;    
         }
     }
 });
@@ -112,10 +118,12 @@ button6.addEventListener('click', function () {
             input1 += button6.id;
             console.log("Input 1 = " + input1);
             outputbox.innerHTML = input1;
+            stringIn += button6.id;    
         } else if (state === 2) {
             input2 += button6.id;
             console.log("Input 2 = " + input2);
             outputbox.innerHTML = input2;
+            stringIn += button6.id;    
         }
     }
 });
@@ -127,10 +135,12 @@ button7.addEventListener('click', function () {
             input1 += button7.id;
             console.log("Input 1 = " + input1);
             outputbox.innerHTML = input1;
+            stringIn += button7.id;    
         } else if (state === 2) {
             input2 += button7.id;
             console.log("Input 2 = " + input2);
             outputbox.innerHTML = input2;
+            stringIn += button7.id;    
         }
     }
 });
@@ -142,10 +152,12 @@ button8.addEventListener('click', function () {
             input1 += button8.id;
             console.log("Input 1 = " + input1);
             outputbox.innerHTML = input1;
+            stringIn += button8.id;    
         } else if (state === 2) {
             input2 += button8.id;
             console.log("Input 2 = " + input2);
             outputbox.innerHTML = input2;
+            stringIn += button8.id;    
         }
     }
 });
@@ -157,10 +169,12 @@ button9.addEventListener('click', function () {
             input1 += button9.id;
             console.log("Input 1 = " + input1);
             outputbox.innerHTML = input1;
+            stringIn += button9.id;    
         } else if (state === 2) {
             input2 += button9.id;
             console.log("Input 2 = " + input2);
             outputbox.innerHTML = input2;
+            stringIn += button9.id;    
         }
     }
 });
@@ -172,10 +186,12 @@ buttonDecimal.addEventListener('click', function () {
             input1 += buttonDecimal.id;
             console.log("Input 1 = " + input1);
             outputbox.innerHTML = input1;
+            stringIn += buttonDecimal.id;    
         } else if (state === 2) {
             input2 += buttonDecimal.id;
             console.log("Input 2 = " + input2);
             outputbox.innerHTML = input2;
+            stringIn += buttonDecimal.id;    
         }
     }
 });
@@ -193,10 +209,17 @@ buttonPlus.addEventListener('click', function () {  //IF IN STATE 2 DO THE CALCU
             input1 = output;
             input2 = '';
             outputbox.innerHTML = output;
+            stringIn += ' + ';  
+            stringArr.push(stringIn);
+            stringIn = '';
+            inputString.innerHTML = stringArr.join('');   
         } else {
             state = 2;
             console.log("Operator = " + oper);
-            outputbox.innerHTML = '+';
+            stringIn += ' + ';  
+            stringArr.push(stringIn);
+            stringIn = '';
+            inputString.innerHTML = stringArr.join('');   
         }
     }
 });
@@ -211,10 +234,17 @@ buttonMultiply.addEventListener('click', function () {
             input1 = output;
             input2 = '';
             outputbox.innerHTML = output;
+            stringIn += ' x ';  
+            stringArr.push(stringIn);
+            stringIn = '';
+            inputString.innerHTML = stringArr.join('');  
         } else {
             state = 2;
             console.log("Operator = " * oper);
-            outputbox.innerHTML = 'x';
+            stringIn += ' x ';  
+            stringArr.push(stringIn);
+            stringIn = '';
+            inputString.innerHTML = stringArr.join('');  
         }
     }
 });
@@ -229,10 +259,17 @@ buttonDivide.addEventListener('click', function () {
             input1 = output;
             input2 = '';
             outputbox.innerHTML = output;
+            stringIn += ' &divide; ';  
+            stringArr.push(stringIn);
+            stringIn = '';
+            inputString.innerHTML = stringArr.join('');  
         } else {
             state = 2;
             console.log("Operator = " / oper);
-            outputbox.innerHTML = '&divide;';
+            stringIn += ' &divide; ';  
+            stringArr.push(stringIn);
+            stringIn = '';
+            inputString.innerHTML = stringArr.join('');   
         }
     }
 });
@@ -247,10 +284,17 @@ buttonSubtract.addEventListener('click', function () {
             input1 = output;
             input2 = '';
             outputbox.innerHTML = output;
+            stringIn += ' - ';  
+            stringArr.push(stringIn);
+            stringIn = '';
+            inputString.innerHTML = stringArr.join('');  
         } else {
             state = 2;
             console.log("Operator = " - oper);
-            outputbox.innerHTML = '-';
+            stringIn += ' - ';  
+            stringArr.push(stringIn);
+            stringIn = '';
+            inputString.innerHTML = stringArr.join('');  
         }
     }
 });
@@ -265,6 +309,11 @@ buttonEquals.addEventListener('click', function () {
             state = 1;
             input1 = output;
             input2 = '';
+            stringIn = output;
+            stringArr = [];
+            stringArr.push(stringIn);
+            stringIn='';
+            inputString.innerHTML = '';            
         } else if (oper === 'multiply') {
             output = parseFloat(input1) * parseFloat(input2);
             console.log(output);
@@ -272,6 +321,11 @@ buttonEquals.addEventListener('click', function () {
             state = 1;
             input1 = output;
             input2 = '';
+            stringIn = output;
+            stringArr = [];
+            stringArr.push(stringIn);
+            stringIn='';
+            inputString.innerHTML = '';   
         } else if (oper === 'divide') {
             output = parseFloat(input1) / parseFloat(input2);
             console.log(output);
@@ -279,6 +333,11 @@ buttonEquals.addEventListener('click', function () {
             state = 1;
             input1 = output;
             input2 = '';
+            stringIn = output;
+            stringArr = [];
+            stringArr.push(stringIn);
+            stringIn='';
+            inputString.innerHTML = '';   
         } else if (oper === 'subtract') {
             output = parseFloat(input1) - parseFloat(input2);
             console.log(output);
@@ -286,6 +345,11 @@ buttonEquals.addEventListener('click', function () {
             state = 1;
             input1 = output;
             input2 = '';
+            stringIn = output;
+            stringArr = [];
+            stringArr.push(stringIn);
+            stringIn='';
+            inputString.innerHTML = '';   
         }
     }
 });
@@ -300,6 +364,9 @@ buttonOn.addEventListener('click', function () {
     outputbox.classList.remove('off');
     outputbox.classList.add('on');
     outputbox.innerHTML = '0';
+    stringIn = '';
+    stringArr = [];
+    inputString.innerHTML = '';
 });
 
 var buttonOff = document.getElementById('off');
@@ -311,18 +378,22 @@ buttonOff.addEventListener('click', function () {
     state = 1;
     outputbox.classList.remove('on');
     outputbox.classList.add('off');
-
+    stringIn = '';
+    stringArr = [];
+    inputString.innerHTML = '';
 });
 
 var buttonClearE = document.getElementById('ce');
 buttonClearE.addEventListener('click', function () {
     if (calcOn) {
         if (state === 1) {
-            outputbox.innerHTML = '';
+            outputbox.innerHTML = '0';
             input1 = '';
+            stringIn = '';
         } else if (state === 2) {
-            outputbox.innerHTML = '';
+            outputbox.innerHTML = '0';
             input2 = '';
+            stringIn = '';
         }
     }
 });
@@ -330,7 +401,10 @@ buttonClearE.addEventListener('click', function () {
 var buttonClear = document.getElementById('c');
 buttonClear.addEventListener('click', function () {
     if (calcOn) {
-        outputbox.innerHTML = '';
+        stringIn = '';
+        stringArr = [];
+        inputString.innerHTML = '';
+        outputbox.innerHTML = '0';
         input1 = '';
         input2 = '';
         state = 1;
