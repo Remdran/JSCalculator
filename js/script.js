@@ -6,6 +6,7 @@ var input1 = '';
 var input2 = '';
 var oper;
 var calcOn = true;
+var output = 0;
 
 var outputbox = document.getElementById('outputbox');
 
@@ -186,9 +187,17 @@ var buttonPlus = document.getElementById('plus');
 buttonPlus.addEventListener('click', function () {  //IF IN STATE 2 DO THE CALCULATION AND PRINT TO TO SCREEN
     if (calcOn) {
         oper = buttonPlus.id;
-        state = 2;
-        console.log("Operator = " + oper);
-        outputbox.innerHTML = '';
+        if (state === 2) {
+            console.log('state 2');
+            output = parseFloat(input1) + parseFloat(input2);
+            input1 = output;
+            input2 = '';
+            outputbox.innerHTML = output;
+        } else {
+            state = 2;
+            console.log("Operator = " + oper);
+            outputbox.innerHTML = '+';
+        }
     }
 });
 
@@ -196,9 +205,17 @@ var buttonMultiply = document.getElementById('multiply');
 buttonMultiply.addEventListener('click', function () {
     if (calcOn) {
         oper = buttonMultiply.id;
-        state = 2;
-        console.log("Operator = " + oper);
-        outputbox.innerHTML = '';
+        if (state === 2) {
+            console.log('state 2');
+            output = parseFloat(input1) * parseFloat(input2);
+            input1 = output;
+            input2 = '';
+            outputbox.innerHTML = output;
+        } else {
+            state = 2;
+            console.log("Operator = " * oper);
+            outputbox.innerHTML = 'x';
+        }
     }
 });
 
@@ -206,9 +223,17 @@ var buttonDivide = document.getElementById('divide');
 buttonDivide.addEventListener('click', function () {
     if (calcOn) {
         oper = buttonDivide.id;
-        state = 2;
-        console.log("Operator = " + oper);
-        outputbox.innerHTML = '';
+        if (state === 2) {
+            console.log('state 2');
+            output = parseFloat(input1) / parseFloat(input2);
+            input1 = output;
+            input2 = '';
+            outputbox.innerHTML = output;
+        } else {
+            state = 2;
+            console.log("Operator = " / oper);
+            outputbox.innerHTML = '&divide;';
+        }
     }
 });
 
@@ -216,9 +241,17 @@ var buttonSubtract = document.getElementById('subtract');
 buttonSubtract.addEventListener('click', function () {
     if (calcOn) {
         oper = buttonSubtract.id;
-        state = 2;
-        console.log("Operator = " + oper);
-        outputbox.innerHTML = '';
+        if (state === 2) {
+            console.log('state 2');
+            output = parseFloat(input1) - parseFloat(input2);
+            input1 = output;
+            input2 = '';
+            outputbox.innerHTML = output;
+        } else {
+            state = 2;
+            console.log("Operator = " - oper);
+            outputbox.innerHTML = '-';
+        }
     }
 });
 
@@ -226,25 +259,33 @@ var buttonEquals = document.getElementById('equals'); //If answer is bigger than
 buttonEquals.addEventListener('click', function () {
     if (calcOn) {
         if (oper === 'plus') {
-            var output = parseFloat(input1) + parseFloat(input2);
+            output = parseFloat(input1) + parseFloat(input2);
             console.log(output);
             outputbox.innerHTML = output;
             state = 1;
+            input1 = output;
+            input2 = '';
         } else if (oper === 'multiply') {
-            var output = parseFloat(input1) * parseFloat(input2);
+            output = parseFloat(input1) * parseFloat(input2);
             console.log(output);
             outputbox.innerHTML = output;
             state = 1;
+            input1 = output;
+            input2 = '';
         } else if (oper === 'divide') {
-            var output = parseFloat(input1) / parseFloat(input2);
+            output = parseFloat(input1) / parseFloat(input2);
             console.log(output);
             outputbox.innerHTML = output;
             state = 1;
+            input1 = output;
+            input2 = '';
         } else if (oper === 'subtract') {
-            var output = parseFloat(input1) - parseFloat(input2);
+            output = parseFloat(input1) - parseFloat(input2);
             console.log(output);
             outputbox.innerHTML = output;
             state = 1;
+            input1 = output;
+            input2 = '';
         }
     }
 });
@@ -258,17 +299,18 @@ buttonOn.addEventListener('click', function () {
     calcOn = true;
     outputbox.classList.remove('off');
     outputbox.classList.add('on');
+    outputbox.innerHTML = '0';
 });
 
 var buttonOff = document.getElementById('off');
 buttonOff.addEventListener('click', function () {
     calcOn = false;
     outputbox.innerHTML = '';
-     input1 = '';
-     input2 = '';
-     state = 1;
-     outputbox.classList.remove('on');
-     outputbox.classList.add('off');
+    input1 = '';
+    input2 = '';
+    state = 1;
+    outputbox.classList.remove('on');
+    outputbox.classList.add('off');
 
 });
 
