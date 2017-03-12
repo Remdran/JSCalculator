@@ -6,25 +6,37 @@
 }
 
 #base {
-    height: 320px;
+    height: 340px;
     width: 255px;
     margin: 50px auto;
     background-color: #585858;
     border-radius: 20px;
     padding: 20px;
     box-shadow: inset -14px -14px 40px -17px #121212, inset 14px 4px 40px -17px, 8px 8px 9px -4px #212121;
+    position: relative;
 }
 
 #outputbox {
     margin: 20px 5px;
-    height: 40px;
+    height: 60px;
     width: 205px;
     text-align: right;
     border-radius: 5px;
     font-size: 34px;    
     overflow: hidden;
     border: 2px solid #8b9b8c;
-    box-shadow: inset -5px -5px 7px -6px #777777; 
+    box-shadow: inset -5px -5px 7px -6px #777777;     
+}
+
+
+#stringinput {
+    width: 195px;
+    height: 15px;
+    text-align: right;
+    font-size: 70%;
+    top: 80px;
+    left: 28px;
+    position: absolute;
 }
 
 button {
