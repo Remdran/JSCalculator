@@ -5,3 +5,6 @@
     ✔ Put the answer equal to input 1 so you can 12 + 12 = 24 + 2 = 26 + = 28 etc @done (12/03/2017, 14:54:59)
 ✔ Add a "history" of numbers and operators keyed into the calculator @done (12/03/2017, 16:01:42)
 ☐ Refactor code to best standard + ES6
+    ✔ Refactor code to reduce the amount of duplicate code @done (28/03/2017, 20:58:36)
+    ☐ Refactor for const and let
+☐ Remove IDs from HTML now they're no longer used
