@@ -1,14 +1,14 @@
-var state = 1;
-var input1 = '';
-var input2 = '';
-var oper;
-var calcOn = true;
-var output = 0;
-var stringIn = ''
-var stringArr = [];
+let state = 1;
+let input1 = '';
+let input2 = '';
+let oper;
+let calcOn = true;
+let output = 0;
+let stringIn = '';
+let stringArr = [];
 
-var outputbox = document.getElementById('outputbox');
-var inputString = document.getElementById('stringinput');
+const outputbox = document.getElementById('outputbox');
+const inputString = document.getElementById('stringinput');
 
 //=======================================================================
 // Numbers
@@ -57,7 +57,7 @@ opButtons.forEach(function (opButton) {
 });
 
 
-var buttonEquals = document.getElementById('equals');
+const buttonEquals = document.getElementById('equals');
 buttonEquals.addEventListener('click', function () {
     if (calcOn) {
         output = CalculateAnswer();
@@ -77,7 +77,7 @@ buttonEquals.addEventListener('click', function () {
 // ON/OFF and Clear buttons
 //=======================================================================
 
-var buttonOn = document.getElementById('on');
+const buttonOn = document.getElementById('on');
 buttonOn.addEventListener('click', function () {
     calcOn = true;
     outputbox.classList.remove('off');
@@ -88,7 +88,7 @@ buttonOn.addEventListener('click', function () {
     inputString.innerHTML = '';
 });
 
-var buttonOff = document.getElementById('off');
+const buttonOff = document.getElementById('off');
 buttonOff.addEventListener('click', function () {
     calcOn = false;
     outputbox.innerHTML = '';
@@ -102,7 +102,7 @@ buttonOff.addEventListener('click', function () {
     inputString.innerHTML = '';
 });
 
-var buttonClearE = document.getElementById('ce');
+const buttonClearE = document.getElementById('ce');
 buttonClearE.addEventListener('click', function () {
     if (calcOn) {
         if (state === 1) {
@@ -117,7 +117,7 @@ buttonClearE.addEventListener('click', function () {
     }
 });
 
-var buttonClear = document.getElementById('c');
+const buttonClear = document.getElementById('c');
 buttonClear.addEventListener('click', function () {
     if (calcOn) {
         stringIn = '';
